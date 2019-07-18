@@ -34,3 +34,11 @@ def get_adverb():
 
 def print_mad_lib(noun, verb, adjective, adverb):
     print(f'Do you {verb} your {adjective} {noun} {adverb}? That\'s hilarious!')
+
+if __name__ == "__main__":
+    
+    noun = get_noun()
+    verb = get_verb()
+    adjective = get_adjective()
+    adverb = get_adverb()
+    print_mad_lib(noun, verb, adjective, adverb)
