@@ -19,7 +19,7 @@ class AppTest(TestCase):
 
     def test_get_author_name(self):
         expect_author_name = 'Obi-Wan Kenobi'
-        with patch('builtins.input', return_value=expect_author_name) as mocked_input:
+        with patch('builtins.input', ) as mocked_input:
             author_name = app.get_author_name()
             mocked_input.assert_called_with('Who said it? ')
             self.assertEqual(author_name, expect_author_name)
