@@ -6,9 +6,9 @@ import app
 class CalcRetirementTest(TestCase):
 
     def test_get_current_year(self):
-        with patch('app.get_now', return_value=datetime(2019, 8, 4, 12, 22, 44, 123456)) as mocked_datetime:
+        with patch('app.get_now', return_value=datetime(2015, 8, 4, 12, 22, 44, 123456)) as mocked_datetime:
             year = app.get_current_year()
-            self.assertEqual(year, 2019)
+            self.assertEqual(year, 2015)
     
     def test_calc_years_till_retirement(self):
         years_till_retirement = app.calc_years_till_retirement(30, 80)

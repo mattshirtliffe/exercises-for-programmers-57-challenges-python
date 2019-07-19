@@ -25,3 +25,18 @@ class AppTest(TestCase):
             retirement_age = app.get_retirement_age()
             mocked_print.assert_called_with(expected)
             self.assertEqual(retirement_age, expected_retirement_age)
+
+    def test_print_years_left_message(self):
+        years = 25
+        expected = f'You have {years} years left until you can retire'
+        with patch('builtins.print') as mocked_print:
+            app.print_years_left_messages(years)
+            mocked_print.assert_called_with(expected)
+
+    def test_print_retirement_year_message(self):
+        this_year = 2015
+        retirement_year = 2055
+        expected = f'It\'s {this_year}, so you can retire in {retirement_year}'
+        with patch('builtins.print') as mocked_print:
+            app.print_retirement_year_message(2015, 2055)
+            mocked_print.assert_called_with(expected)
