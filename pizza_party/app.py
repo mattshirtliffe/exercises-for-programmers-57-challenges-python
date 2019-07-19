@@ -12,3 +12,13 @@ def print_header():
     header_text += TEXT
     header_text += line
     print(header_text)
+
+def get_number_of_people():
+
+    while True:
+        try:
+            number_of_people_str = input('How many people? ')
+            number_of_people = int(number_of_people_str)
+            return number_of_people
+        except ValueError:
+            print('A valid number is required')
