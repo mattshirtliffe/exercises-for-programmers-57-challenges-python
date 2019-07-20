@@ -63,7 +63,3 @@ class AppTest(TestCase):
             expected = f'There is {slices} leftover slice'
             app.print_leftover(slices)
             mocked_print.assert_called_with(expected)
-            # slices = 1
-            # expected = f'Each peron gets {slices} slice of pizza'
-            # app.print_person_gets(slices)
-            # mocked_print.assert_called_with(expected)
