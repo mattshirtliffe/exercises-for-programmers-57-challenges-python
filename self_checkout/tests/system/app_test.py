@@ -21,7 +21,6 @@ class AppTest(TestCase):
             mocked_input.assert_called_with(expected_input_text)
             self.assertEqual(item_price, expected_item_price)
 
-
     def test_get_item_quantity(self):
 
         item_number = 1
