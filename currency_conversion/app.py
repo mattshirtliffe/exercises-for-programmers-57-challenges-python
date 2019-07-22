@@ -35,8 +35,10 @@ def get_exchange_rate():
 def print_rate(euros, rate):
     print(f'{euros} euros at exchange rage of {rate}')
 
+
 def print_dollars(dollars):
     print(f'{dollars} US dollars')
+
 
 def calculate_amount(euro, exchange_rate):
     return round(float(euro) * (exchange_rate/100), 2)
