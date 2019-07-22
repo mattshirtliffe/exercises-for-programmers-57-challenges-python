@@ -3,7 +3,6 @@ import app
 
 class CurrencyConversionTest(TestCase):
 
-
     def test_calculate_amount(self):
         expected = 111.38
         euro = 81
