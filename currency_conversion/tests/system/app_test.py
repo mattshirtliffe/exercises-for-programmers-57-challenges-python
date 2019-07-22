@@ -45,10 +45,3 @@ class AppTest(TestCase):
         with patch('builtins.print') as mocked_print:
             app.print_dollars(dollars)
             mocked_print.assert_called_with(expected)
-
-    def test_calculate_amount(self):
-        # move to unit
-        v = app.calculate_amount(81, 137.51)
-        self.assertEqual(v, 111.38)
-
-    
