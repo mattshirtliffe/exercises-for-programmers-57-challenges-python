@@ -31,5 +31,39 @@ def get_state():
         print('A valid input is required')
 
 
-def print_subtotal():
-    print('')
+def print_subtotal(subtotal):
+    print(f'The subtotal is {subtotal:.2f}.')
+
+
+def print_total(total):
+    print(f'The total is {total:.2f}.')
+
+
+def print_tax(tax):
+    print(f'The tax is {tax:.2f}.')
+
+
+def calculate_tax(subtotal, tax_rate=5.5):
+    tax = (subtotal * tax_rate) / 100
+    return tax
+
+
+def calculate_total(subtotal, tax):
+    return subtotal + tax
+
+
+def print_message(state, order_amount):
+    tax = None
+    if state == 'WI':
+        print_subtotal(order_amount)
+        tax = calculate_tax(order_amount)
+        print_tax(tax)
+        total = calculate_total(order_amount, tax)
+        print_total(total)
+    else:
+        print_total(order_amount)
+
+if __name__ == "__main__":
+    print_message('WI', 10.00)
+    print_message('MN', 10.00)
+

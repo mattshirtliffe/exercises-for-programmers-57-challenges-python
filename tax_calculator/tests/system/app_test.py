@@ -1,5 +1,5 @@
 from unittest import TestCase
-from unittest.mock import patch
+from unittest.mock import patch, call
 import app
 
 class AppTest(TestCase):
@@ -29,4 +29,39 @@ class AppTest(TestCase):
                 self.assertEqual(state, 'WI')
                 state = app.get_state()
                 self.assertEqual(state, 'MN')
-                
+    
+    def test_print_subtotal(self):
+        subtotal = 10.00
+        expected = f'The subtotal is {subtotal:.2f}.'
+        with patch('builtins.print') as mocked_print:
+            app.print_subtotal(subtotal)
+            mocked_print.assert_called_with(expected)
+
+    def test_print_tax(self):
+        tax = 10.00
+        expected = f'The tax is {tax:.2f}.'
+        with patch('builtins.print') as mocked_print:
+            app.print_tax(tax)
+            mocked_print.assert_called_with(expected)
+    
+    def test_print_total(self):
+        total = 10.00
+        expected = f'The total is {total:.2f}.'
+        with patch('builtins.print') as mocked_print:
+            app.print_total(total)
+            mocked_print.assert_called_with(expected)
+
+    
+    def test_print_message(self):
+        order_amount = 10.00
+        expected = f'The total is {order_amount:.2f}.'
+        with patch('builtins.print') as mocked_print:
+            app.print_message('WI', order_amount)
+            mocked_print.assert_has_calls([
+                call('The subtotal is 10.00.'),
+                call('The tax is 0.55.'),
+                call('The total is 10.55.')
+                ])
+
+            app.print_message('MN', order_amount)
+            mocked_print.assert_called_with(expected)
