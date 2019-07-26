@@ -35,7 +35,7 @@ class AppTest(TestCase):
             
                 self.assertEqual(weight, 280)
     
-    def test_print_header(self):
+    def test_print_bmi(self):
         bmi = 34.99
         expected = f'Your BMI is {bmi}'
         with patch('builtins.print') as mocked_print:

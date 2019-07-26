@@ -50,7 +50,9 @@ def print_bmi(bmi):
 
 
 def print_bmi_status(bmi):
-    if bmi >= 18.5 and bmi <=25:
+    min_bmi = 18.5
+    max_max = 25
+    if bmi >= min_bmi and bmi <= max_max:
         print('You are within the ideal weight range.')
     else:
         print('You are overweight. You should see your doctor.')
