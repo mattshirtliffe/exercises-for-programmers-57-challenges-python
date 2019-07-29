@@ -1,4 +1,4 @@
-import re
+
 
 def print_header():
     """ Print header 
@@ -36,7 +36,6 @@ def get_total(numbers):
 
 def print_total(total):
     print(f'The total is {total}.')
-
 
 
 if __name__ == "__main__":
