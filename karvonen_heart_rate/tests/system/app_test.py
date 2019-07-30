@@ -82,3 +82,4 @@ class AppTest(TestCase):
         with patch('builtins.print') as mocked_print:
             app.print_output(age, resting_heart_rate)
             mocked_print.assert_has_calls(expected_calls)
+            mocked_print.assert_called_with('95%         | 191 bpm')
