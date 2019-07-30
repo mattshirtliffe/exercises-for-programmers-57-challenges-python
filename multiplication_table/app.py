@@ -48,4 +48,5 @@ if __name__ == "__main__":
     
     print_header()
     create_table_list()
+    print()
     print_output()
