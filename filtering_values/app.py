@@ -20,13 +20,14 @@ def get_numbers():
     number_string_list = number_string.split()
     return list(map(int, number_string_list))
 
+
 def get_evens(numbers):
     return list(filter(lambda x: x % 2 == 0, numbers))
+
 
 def print_evens(even_numbers):
     n = ' '.join(str(e) for e in even_numbers)
     print(f'The even numbers are {n}.')
-
 
 
 if __name__ == "__main__":
