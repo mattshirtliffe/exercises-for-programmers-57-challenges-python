@@ -5,7 +5,7 @@ import app
 class AppTest(TestCase):
 
     def setUp(self):
-        pass
+        app.numbers = [100, 200, 1000, 300]
 
     def test_print_header(self):
         
@@ -42,32 +42,31 @@ class AppTest(TestCase):
             mocked_input.assert_has_calls(expected_calls)
 
     def test_print_numbers(self):
-        app.numbers = [100, 200, 1000, 300]
+
         with patch('builtins.print') as mocked_print:
             app.print_numbers()
             mocked_print.assert_called_with('Numbers: 100, 200, 1000, 300')
 
-
     def test_print_average(self):
-        app.numbers = [100, 200, 1000, 300]
+
         with patch('builtins.print') as mocked_print:
             app.print_average()
             mocked_print.assert_called_with('The average is 400')
 
     def test_print_minimum(self):
-        app.numbers = [100, 200, 1000, 300]
+        
         with patch('builtins.print') as mocked_print:
             app.print_minimum()
             mocked_print.assert_called_with('The minimum is 100')
 
     def test_print_maximum(self):
-        app.numbers = [100, 200, 1000, 300]
+        
         with patch('builtins.print') as mocked_print:
             app.print_maximum()
             mocked_print.assert_called_with('The maximum is 1000')
 
     def test_print_standard_deviation(self):
-        app.numbers = [100, 200, 1000, 300]
+        
         with patch('builtins.print') as mocked_print:
             app.print_standard_deviation()
             mocked_print.assert_called_with('The standard deviation is 408.25.')
