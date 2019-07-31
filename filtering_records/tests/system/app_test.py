@@ -6,10 +6,17 @@ class AppTest(TestCase):
 
     def test_print_header(self):
         
-        expected = '------------------\n Sorting records \n------------------\n'
+        expected = '--------------------\n Filtering records \n--------------------\n'
         with patch('builtins.print') as mocked_print:
             app.print_header()
             mocked_print.assert_called_with(expected)
+
+    def test_get_search_string(self):
+        with patch('builtins.print') as mocked_print, patch('builtins.input') as mocked_input:
+            mocked_input.side_effect = ('', 'Jac')
+            search_string = app.get_search_string()
+            mocked_input.assert_called_with('Enter a search string: ')
+            mocked_print.assert_called_with('A valid input is required')
 
     def test_print_headings(self):
         calls = [
@@ -61,3 +68,19 @@ class AppTest(TestCase):
         with patch('builtins.print') as mocked_print:
             app.print_users()
             mocked_print.assert_has_calls(calls)
+
+    def test_sort_users(self):
+
+
+        expected = [
+            {'first_name':'John', 'last_name':'Johnson', 'position':'Manager', 'separation_date':'2016-12-31'},
+            {'first_name':'Tou', 'last_name':'Xiong', 'position':'Software Engineer', 'separation_date':'2016-10-05'},
+            {'first_name':'Michaela', 'last_name':'Michaelson', 'position':'District Manage', 'separation_date':'2015-12-19'},
+            {'first_name':'Jake', 'last_name':'Jacobson', 'position':'Programmer', 'separation_date':''},
+            {'first_name':'Jacquelyn', 'last_name':'Jackson', 'position':'DBA', 'separation_date':''},
+            {'first_name':'Sally', 'last_name':'Weber', 'position':'Web Developer', 'separation_date':'2015-12-18'}
+        ]
+
+        app.users = app.sort_users()
+        self.assertDictEqual(app.users[-1], {'first_name':'Tou', 'last_name':'Xiong', 'position':'Software Engineer', 'separation_date':'2016-10-05'})
+        self.assertDictEqual(app.users[0], {'first_name':'Jacquelyn', 'last_name':'Jackson', 'position':'DBA', 'separation_date':''})
