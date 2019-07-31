@@ -36,9 +36,3 @@ class AppTest(TestCase):
         special = 2
         numbers = 2
         password = app.build_password(length, special, numbers)
-
-    def print_standard_deviation(self):
-        
-        with patch('builtins.print') as mocked_print:
-            app.print_standard_deviation()
-            mocked_print.assert_called_with('The standard deviation is 408.25.')
