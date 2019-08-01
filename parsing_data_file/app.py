@@ -1,6 +1,3 @@
-import random
-import string
-
 
 def print_header():
     """ Print header 
