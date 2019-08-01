@@ -1,21 +1,12 @@
 import random
 import string
 
-users = [
-    {'first_name':'John', 'last_name':'Johnson', 'position':'Manager', 'separation_date':'2016-12-31'},
-    {'first_name':'Tou', 'last_name':'Xiong', 'position':'Software Engineer', 'separation_date':'2016-10-05'},
-    {'first_name':'Michaela', 'last_name':'Michaelson', 'position':'District Manage', 'separation_date':'2015-12-19'},
-    {'first_name':'Jake', 'last_name':'Jacobson', 'position':'Programmer', 'separation_date':''},
-    {'first_name':'Jacquelyn', 'last_name':'Jackson', 'position':'DBA', 'separation_date':''},
-    {'first_name':'Sally', 'last_name':'Weber', 'position':'Web Developer', 'separation_date':'2015-12-18'}
-]
-
 
 def print_header():
     """ Print header 
     """
     header_text = ''
-    TEXT = f' Name selector \n'
+    TEXT = f' Name sorter \n'
     line = '-' * len(TEXT)
     line += '\n'
 
