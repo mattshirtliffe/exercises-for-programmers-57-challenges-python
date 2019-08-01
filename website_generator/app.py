@@ -71,7 +71,7 @@ def create_file(path, content):
     with open(path, 'w') as f:
         f.writelines(content)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     print_header()
     site_name = get_site_name()
     author_name = get_author_name()
