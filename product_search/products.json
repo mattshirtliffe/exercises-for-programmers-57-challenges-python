@@ -1,0 +1,19 @@
+{
+    "products":[
+       {
+          "name":"Widget",
+          "price":25.00,
+          "quantity":5
+       },
+       {
+          "name":"Thing",
+          "price":15.00,
+          "quantity":5
+       },
+       {
+          "name":"Doodad",
+          "price":5.00,
+          "quantity":10
+       }
+    ]
+ }
