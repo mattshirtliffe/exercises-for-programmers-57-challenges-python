@@ -27,7 +27,7 @@ class AppTest(TestCase):
             self.assertEqual(response.json(), response_json)
 
 
-    def test_print_people_in_space(self):
+    def test_print_weather_data(self):
         
         expected = [call('Sheffield weather:'), call('20 degrees celsius')]
         temp = 20
