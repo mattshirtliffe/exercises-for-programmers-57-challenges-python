@@ -24,7 +24,6 @@ def get_numbers():
             numbers.append(number)
         except ValueError:
             print('A valid input is required')
-
     return numbers
 
 
