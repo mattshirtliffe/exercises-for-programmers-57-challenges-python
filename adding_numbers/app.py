@@ -17,16 +17,14 @@ def print_header():
 def get_numbers():
 
     numbers = list()
-    for index in range(5):
+    while len(numbers) != 5:
+        try:
+            number = input('Enter a number: ')
+            number = int(number)
+            numbers.append(number)
+        except ValueError:
+            print('A valid input is required')
 
-        while True:
-            try:
-                number = input('Enter a number: ')
-                number = int(number)
-                numbers.append(number)
-                break
-            except ValueError:
-                print('A valid input is required')
     return numbers
 
 
