@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <meta name="author" content="$author">
+    <title>URL Shortener</title>
+</head>
+
+<body>
+    <main>
+        <section id='form'>
+            <h1>Enter Text</h1>
+            {% if text %}
+                <div>
+                    {{ text }}
+                </div>
+            {% endif %}
+
+            {% if text_id %}
+                <form method="POST" action="/{{text_id}}">
+            {% else %}
+                <form method="POST" action="/">
+            {% endif %}
+            
+                {{ form.hidden_tag() }}
+                <div>{{ form.text.label }}: {{ form.text(value=text) }}</div>
+                {{ form.submit() }}
+            </form>
+            {% if form.errors %}
+                <ul class="errors">
+                    {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                        {% for error in field_errors %}
+                            <li>{{ form[field_name].label }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if session['url'] %}
+                url: <a href="{{ session['url'] }}">{{ session['url'] }}</a>
+            {% endif %}
+            
+        </section>
+    </main>
+</body>
+
+</html>
