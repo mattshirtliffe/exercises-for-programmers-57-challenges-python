@@ -10,12 +10,8 @@ import pickledb
 # export FLASK_APP=app.py
 # flask run
 
-# def is_url(form, field):
-#     if not field.data.startswith('https://'):
-#         raise validators.ValidationError('A valid url is required')
 
 class URLForm(FlaskForm):
-    # url = StringField('url', [is_url])
     text = TextAreaField('text')
     submit = SubmitField('Submit')
 

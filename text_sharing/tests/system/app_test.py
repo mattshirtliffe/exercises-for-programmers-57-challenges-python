@@ -26,9 +26,9 @@ class AppTest(TestCase):
         with self.app as client:
             response = client.get('/')
             self.assertEqual(response.status_code, 200)         
-            self.assertIn('<h1>Enter URL</h1>',  response.get_data().decode("utf-8") )
+            self.assertIn('<h1>Enter Text</h1>',  response.get_data().decode("utf-8") )
 
-    def test_create_url(self):
+    def test_create_text(self):
         with self.app as client:
-            response = client.post('/', data={'url': 'https://matthewshirtliffe.co.uk/'}, follow_redirects=False)
+            response = client.post('/', data={'text': 'Some text'}, follow_redirects=False)
             self.assertEqual(response.status_code, 302)
