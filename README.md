@@ -2,6 +2,8 @@
 
 Here are my Python solutions to the book Exercises for Programmers: 57 Challenges to Develop Your Coding Skills by Brian P. Hogan.
 
+[Buy here](https://www.amazon.co.uk/Exercises-Programmers-Challenges-Develop-Coding/dp/1680501224)
+
 # Setup
 virtualenv env -p python3.7
 
