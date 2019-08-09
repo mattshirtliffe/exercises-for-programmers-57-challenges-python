@@ -1,0 +1,43 @@
+{
+    "questions":[
+       {
+          "question":"What is PEP 8?",
+          "answers":[
+             {
+                "answer":"PEP 8 is a coding convention, a set of recommendation, about how to write your Python code more readable.",
+                "is_correct":true
+             },
+             {
+                "answer":"PEP 8 is the name of the guy who developed python.",
+                "is_correct":false
+             }
+          ]
+       },
+       {
+          "question":"What is pickling and unpickling?",
+          "answers":[
+             {
+                "answer":"Pickle module accepts any Python object and converts it into a string representation and dumps it into a file by using dump function, this process is called pickling. While the process of retrieving original Python objects from the stored string representation is called unpickling. ",
+                "is_correct":true
+             },
+             {
+                "answer":"Pickle module is a tool for creating pickles",
+                "is_correct":false
+             }
+          ]
+       },
+       {
+          "question":"How Python is interpreted?",
+          "answers":[
+             {
+                "answer":"Python language is an interpreted language. Python program runs directly from the source code. It converts the source code that is written by the programmer into an intermediate language, which is again translated into machine language that has to be executed. ",
+                "is_correct":true
+             },
+             {
+                "answer":"Python language is not an interpreted language.",
+                "is_correct":false
+             }
+          ]
+       }
+    ]
+ }
